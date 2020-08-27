@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+#rubocop:disable all
+# frozen_string_literal: true
+
+class GoodCat
+  def initialize(name)
+    @name = name
+  end
+
+  def speak
+    "#{@name} says Assalaam alaykum"
+  end
+
+  def respond
+    "#{@name} replies Walaykum salaam"
+  end
+
+  def name                       # This was renamed from get_name
+    @name
+  end
+
+  def name=(n)                    # This was renamed fro set_name=
+    @name = n
+  end
+end
+
+qoosim = GoodCat.new("Qoosim")
+puts qoosim.speak
+sekinah = GoodCat.new("Sekinah")
+puts sekinah.respond
+
+puts qoosim.name
+puts sekinah.name
+
+qoosim.name = "Ayinde"
+
+puts qoosim.name
+
+#rubocop:disable all

@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+#rubocop:disable all
+# frozen_string_literal: true
+
+# Refactoring getter and setter methods with the use of attr_accessor
+class GoodDog
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def speak
+    "#{@name} says Assalaam alaykum" # We can now reference to instance method instead of                                # 
+  end                                # referencing instance variable directly like this:
+                                     #begin 
+                                              def speak
+                                                "#{name} says Assalaam alaykum"
+                                              end
+                                     #end
+  def response
+    "#{@name} replies walaykum salaam"
+  end
+
+end
+
+qoosim = GoodDog.new("Qoosim")
+sekinah = GoodDog.new("Sekinah")
+
+puts qoosim.speak
+puts sekinah.response
+
+# get_name from attr_accessor
+puts qoosim.name
+puts sekinah.name 
+
+# set_name= from attr_accessor
+qoosim.name = "Ayinde"
+sekinah.name = "Abeke"
+
+puts qoosim.name
+puts sekinah.name
+#rubocop:disable all
